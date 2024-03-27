@@ -1,0 +1,46 @@
+.category-cart {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    height: 250px;
+    width: 210px;
+    // border: 1px solid red;
+    padding: 5px;
+    margin: 10px; // will have to adjust while using in project
+    .image-wrapper {
+        width: 210px;
+        height: 210px;
+        .category-image {
+            width: 200px;
+            margin: 5px;
+        }
+    }
+    .title {
+        // border: 1px solid blue;
+        text-align: center;
+    }
+    &:hover{
+        .title{
+            text-decoration: underline;
+        }
+    }
+}
+
+.reciepe-image-wrapper{
+    cursor: pointer;
+    height: 300px;
+    width: 300px;
+    margin: 50px; // this should be ...............
+    .reciepe-title{
+        position: absolute;
+        text-align: center;
+        width: 300px;
+        bottom: 5px;
+        padding-top: 5px;
+        padding-bottom: 10px;
+        background-color: rgba(0, 0, 0, .5);
+        color: white;
+    }
+}
+
+

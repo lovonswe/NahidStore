@@ -1,0 +1,125 @@
+$gray-light: #e4e0e1;
+$gray-lighter: #aaa;
+$green-light: #104a0285;
+$red-light: #e04f54;
+$red-lighter: #ff8182;
+
+.shopping-cart {
+    z-index: 96;
+    position: fixed;
+    // transform: translateX(100%);
+    top: 0px;
+    right: 0px;
+    height: calc(100%);
+    width: 300px;
+    transition: transform 0.3s ease;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0.5px 0.5px 20px 0.3px rgb(163, 154, 154);
+    margin-top: 55px;
+    .header {
+        // background-color: $gray-light;
+        width: 100%;
+        font-size: 15px;
+        color: #716b6b;
+        cursor: pointer;
+        height: 39px;
+        box-sizing: border-box;
+        // display: block;
+        padding: 0 0 0 10px;
+        display: flex;
+        justify-content: space-between;
+        box-sizing: border-box;
+        .item-count{
+            .counter {
+                font-weight: 800;
+            }
+        }
+        .cart-close-button{
+            // border: 1px solid gray;
+            // width: 80px;
+            // margin-right: 10px;
+            // margin-bottom: 10px;
+            // margin-top: 10px;
+            ._close {
+                border-radius: 5px;
+                margin-top: 2px;
+                margin-bottom: 3px;
+            }
+        }
+    }
+    .delivery-charge-info {
+        background-color: $green-light;
+        height: 34px;
+        display: flex;
+        justify-content: space-between;
+        text-align: center;
+        // border: 10px solid blue;
+        .charge-message-no-discount{
+            font-size: 13px;
+            font-weight: 600;
+            color: white;
+            padding-top: 6px;
+            padding-left: 10px;
+        }
+        .charge-message {
+            font-size: 13px;
+            font-weight: 600;
+            color: white;
+            padding-top: 6px;
+            padding-left: 10px;
+            //margin: auto;
+        }
+        .info-item-container {
+            // margin: auto;
+            // border: 1px solid red;
+            
+        }
+    }
+}
+
+.delivery-taka-icon {
+    height: 10px;
+    margin-right: 3px;
+}
+
+.item-container {
+    // border: 1px solid red;
+    height: 75%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: $gray-lighter;
+    font-size: 18px;
+    overflow: auto;
+}
+
+.footer {
+    height: 15%;
+    // border: 1px solid green;
+    .hotline{
+        font-size: 20px;
+        font-weight: 700;
+        color: $gray-lighter;
+        text-align: center;
+        margin: 10px;
+    }
+    .place-order-container {
+        display: flex;
+        margin: 10px;
+        font-size: 20px;
+        font-weight: 700;
+        color: white;
+        .place-order{
+            height: 100%;
+            background-color: #ff8182;
+            flex-grow: 1;
+            text-align: center;
+        }
+        .order-price{
+            background-color: #e04f54;
+            width: 110px;
+            text-align: center;
+        }
+
+    }
+}

@@ -1,0 +1,76 @@
+.root {
+  //   border: 1px solid red;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-top: 50px; //adjust dev
+
+  .top {
+    display: flex;
+    // border: 1px solid green;
+
+    .image-container {
+      //   border: 1px solid red;
+      margin: 5px;
+      flex-grow: 1;
+    }
+    .info-container {
+      display: flex;
+      flex-direction: column;
+      //   border: 1px solid red;
+      margin: 5px;
+      flex-grow: 1;
+
+      .title-unit {
+        margin: 5px;
+        .title {
+          font-size: 30px;
+          font-weight: 500;
+        }
+        .unit {
+          font-size: 17px;
+          color: gray;
+        }
+      }
+      .price-discount {
+        display: flex;
+        justify-content: space-between;
+        margin: 5px;
+        // border: 1px solid red;
+        .price {
+          .taka-icon {
+            color: gray;
+          }
+          .unit-price {
+            font-size: 1.4em;
+            font-weight: 500;
+          }
+        }
+        .discount {
+            padding: 3px;
+            font-size: 1.2em;
+            font-weight: 500;
+            color: white;
+            //border: 1px solid green;
+            background-color: #eb2427;
+            border-radius: 3px;
+
+        }
+      }
+      .add-and-buy-container {
+        display: flex;
+        justify-content: space-between;
+        border: 1px solid;
+      }
+      .info {
+        .info-list {
+          list-style-image: url();
+        }
+      }
+    }
+  }
+  .bottom {
+    .delivery-info {
+      // border: 1px solid red;
+    }
+  }
+}

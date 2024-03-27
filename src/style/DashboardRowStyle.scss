@@ -1,0 +1,29 @@
+.dashboard-row {
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: space-around;
+    margin-top: 2%;
+    margin-bottom: 1.1%;
+    margin-left: 5%;
+    margin-right: 5%;
+    div {
+        border: 3px solid rgba(0, 0, 0, 0.09);
+        max-width: 100%;
+        min-width: 20%;
+        margin: 1%;
+        padding: 10px 5px 10px 0px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+        border-radius: 10px;
+
+        height: 80px;
+
+        span {
+            font-weight: 600;
+            color: red;
+        }
+    }
+
+}

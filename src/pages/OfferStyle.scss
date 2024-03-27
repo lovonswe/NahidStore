@@ -1,0 +1,24 @@
+// .contents {
+//     background-color: red;
+//     width: 100%;
+//     height: 100vh;
+//     margin-top: 55px;
+// }
+
+.hierarchy {
+  margin-right: 10px;
+    display: flex;
+    align-items: center;
+    .category:hover,
+    .subCategory:hover,
+    .subSubCategory:hover {
+      text-decoration: underline;
+    }
+  }
+  
+
+  @media screen and (max-width: 568px) {
+    .contents {
+      martop: 100px;
+    }
+  }

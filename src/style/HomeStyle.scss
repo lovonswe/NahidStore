@@ -1,0 +1,49 @@
+$navar-color: #ffd670;
+$black-light: #2d3a3f;
+
+
+
+    .landing-banner {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 50px;
+        height: 400px;
+        background-image: url(https://chaldn.com/asset/Egg.ChaldalWeb.Fabric/Egg.ChaldalWeb1/1.0.0-Deploy-Release-450/Default/stores/chaldal/components/landingPage2/LandingPage/images/landingBanner.png?fbclid=IwAR2rgEcRI7oSkPEIDchDHPZf5CgFs2d3PszF6EtMPJL95plqAxOCo9nAZ5s);
+
+        .title-search {
+            margin: auto;
+
+            .margin {
+                margin-left: 50px;
+
+                .moto {
+                    font-size: 2.7em;
+                    font-weight: 700;
+                }
+            }
+
+        }
+
+        .college-image-container {
+            padding: 20px;
+        }
+    }
+
+    .slider-container-wrapper {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        // border: 1px solid red;
+        .popular-categories{
+            text-align: center;
+            margin-top: 5px;
+            font-size: 20px;
+            font-weight: 400;
+            color: $black-light;
+        }
+        .slider-container{
+            border: 1px solid rgb(255, 255, 255);
+            width: 80%;
+        }
+    }

@@ -1,0 +1,59 @@
+//ctrl + shift + p
+//ctrl + alt + left arrow to maximize width
+//ctrl + alt + right arrow to minimize width
+//alt + click  multicursor
+//ctrl + number to create new editor group
+//ctrl + f4 to remove a editor group
+$navar-color: #ffd670;
+$red-light: #ff4e56;
+
+.navbar {
+    z-index: 100;
+    position: fixed;
+    width: 100%;
+    top:0px;
+    min-height: 55px;
+    // box-shadow: 1px 3px 16px 0px rgba(160, 156, 156, 1);
+    background-color: $navar-color;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .input-container {
+        position: relative; width: 70%; margin-top: 7px;
+    }
+    
+    .location {
+        margin: auto;
+        color: red;
+    }
+    .login-button {
+        box-sizing: border-box;
+        background-color: $red-light;
+        // height: 35px;
+        width: 100px;
+        text-align: center;
+        margin: auto;
+        border-radius: 5px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+        .input-container {
+            widht: 100%;
+            .input-x {
+                // border: 1px solid red;
+                width: 100%;
+            }
+            .search-icon {
+                display: none;
+            }
+        }
+    }
+}
