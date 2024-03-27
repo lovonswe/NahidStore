@@ -23,6 +23,7 @@
   .subcategory-list {
     list-style-type: none;
     padding-left: 20px;
+    margin-top: -2px;;
   }
   
   .subcategory-list > div {
@@ -57,6 +58,6 @@
   
   li:hover {
     /* background-color: #ddd; */
-    background: linear-gradient(90deg, rgba(214,191,96,1) 4%, rgba(246,246,246,1) 94%, rgba(240,240,234,1) 100%);
+    /* background: linear-gradient(90deg, rgba(214,191,96,1) 4%, rgba(246,246,246,1) 94%, rgba(240,240,234,1) 100%); */
   }
   

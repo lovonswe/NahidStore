@@ -10,7 +10,8 @@ import {
 } from "../../store/PathStore";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
-
+import egg from '../../assets/categoryIcons/egg1.png'
+import { IconButton } from "@mui/material";
 const theme = {
   breakpoints: {
     mobile: '@media (max-width: 768px)',
@@ -119,15 +120,30 @@ function Sidebars() {
           <div
             className="category"
             onClick={() => handleCategoryClick(index, category.name)}
+            style={{
+              //backgroundColor: "#aaa"
+            }}
           >
-            {/* {console.log("category : ", category)} */}
-            {category.name}
+              {
+                category.icon ? <img width={"18px"} src={category.icon} style={{marginRight: "3px"}}/> : null
+              }
+              
+              {category.name}
+            
+            
             <span className="arrow">
               {setIcon(category.subCategories, selectedCategory, index)}
             </span>
           </div>
           {selectedCategory === index && category.subCategories && (
-            <ul className="subcategory-list">
+            <ul 
+            className="subcategory-list"
+            style={{
+              //backgroundColor: 'red',
+              borderLeft: '1px solid gray',
+              marginLeft: '18px',
+            }}
+            >
               {category.subCategories &&
                 category.subCategories.map((subcategory, subIndex) => (
                   <li
@@ -141,7 +157,9 @@ function Sidebars() {
                     }
                     {subcategory.name}
                     {subcategory.subCategories && (
-                      <ul className="sub-subcategory-list">
+                      <ul className="sub-subcategory-list" style={{ 
+                        borderLeft: '1px solid gray'
+                        }}>
                         {
                           // console.log("_subCategories: " ,subcategory)
                         }

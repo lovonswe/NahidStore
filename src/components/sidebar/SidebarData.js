@@ -1,5 +1,26 @@
 import React from "react";
 import { uid } from 'uid';
+import egg from '../../assets/categoryIcons/egg1.png'
+import favourites from '../../assets/categoryIcons/heart.png'
+import ramadan from '../../assets/categoryIcons/lamp.png'
+import flashSales from '../../assets/categoryIcons/flash.png'
+import popular from '../../assets/categoryIcons/flames.png'
+import food from '../../assets/categoryIcons/accessory.png'
+import cleaningSupply from '../../assets/categoryIcons/cleaning.png'
+import personalCare from '../../assets/categoryIcons/beauty.png'
+import healthAndWellness from '../../assets/categoryIcons/sink.png'
+import babyCare from '../../assets/categoryIcons/baby.png'
+import homeAndKitchen from '../../assets/categoryIcons/kitchen.png'
+import stationaryAndOffice from '../../assets/categoryIcons/stationary.png'
+import petCare from '../../assets/categoryIcons/gesture.png'
+import toysAndSport from '../../assets/categoryIcons/water-gun.png'
+import beautyAndMakeup from '../../assets/categoryIcons/make-up.png'
+import fashionAndLifeStyle from '../../assets/categoryIcons/gesture.png'
+import vehicleEssential from '../../assets/categoryIcons/bus.png'
+import premimumCare from '../../assets/categoryIcons/crown.png'
+import recipes from '../../assets/categoryIcons/book.png'
+
+
 
 export const productList = [
   {
@@ -150,21 +171,25 @@ export const categories = [
     name: "Favourites",
     subCategories: null,
     path: "/favourites",
+    icon: favourites,
   },
   {
     name: "Ramadan",
     subCategories: null,
     path: "/ramadan",
+    icon: ramadan
   },
   {
     name: "Flash Sales",
     subCategories: null,
     path: "/flash-sales",
+    icon: flashSales
   },
   {
     name: "Popular",
     subCategories: null,
     path: "/popular",
+    icon: popular
   },
   {
     name: "Food",
@@ -431,71 +456,87 @@ export const categories = [
         ],
         path: "/food/cooking"
       }
-    ]
+    ],
+    path: "/food",
+    icon: food
   },
   {
     name: "Cleaning Supply",
     subCategories: null,
-    path: "/cleaning-supply"
+    path: "/cleaning-supply",
+    icon: cleaningSupply
   },
   {
     name:"Personal Care",
     subCategories: null,
-    path: "/personal-care"
+    path: "/personal-care",
+    icon: personalCare
   },
   {
     name: "Health & Wellness",
     subCategories: null,
-    path: "/health-and-wellness"
+    path: "/health-and-wellness",
+    icon: healthAndWellness
   },
   {
     name: "Baby Care",
     subCategories: null,
-    path: "/baby-care"
+    path: "/baby-care",
+    icon: babyCare
   },
   {
     name: "Home & Kitchen",
     subCategories:  null,
-    path: "/home-and-kitchen"
+    path: "/home-and-kitchen",
+    icon: homeAndKitchen
   },
   {
     name: "Staionery & Office",
     subCategories: null,
-    path: "/staionery-and-office"
+    path: "/staionery-and-office",
+    icon: stationaryAndOffice
   },
   {
     name: "Pet Care",
     subCategories: null,
-    path: "/pet-care"
+    path: "/pet-care",
+    icon: petCare
+
   },
   {
     name: "Toys & Sports",
     subCategories: null,
-    path: "/toys-and-sports"
+    path: "/toys-and-sports",
+    icon: toysAndSport
   },
   {
     name: "Beauty & MakeUp",
     subCategories: null,
-    path: "/beauty-and-makeup"
+    path: "/beauty-and-makeup",
+    icon: beautyAndMakeup
   },
   {
     name: "Fashion & Lifestyle",
     subCategories: null,
-    path: "/fashion-and-lifestyle"
+    path: "/fashion-and-lifestyle",
+    icon: fashionAndLifeStyle
   },
   {
     name: "Vehicle Essentials",
     subCategories: null,
-    path: "/vehicle-essentials"
+    path: "/vehicle-essentials",
+    icon: vehicleEssential
   },
   {
     name: "Premium Care",
     subCategories: null,
-    path: "/premium-care"
+    path: "/premium-care",
+    icon: premimumCare
   },
   {
     name: "Recipes",
     subCategories: null,
-    path: "/recipes"
+    path: "/recipes",
+    icon: recipes
   }
 ];

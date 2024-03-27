@@ -4,12 +4,20 @@ import { CardMedia, IconButton, Typography } from '@mui/material';
 import styles from './CartItemStyle.module.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { red } from '@mui/material/colors';
+import { useProductStore } from '../../store/ProductStore';
 function CartItem({product, setTotalPriceOfAllItemsInCart}) {
+    const {updateProduct} = useProductStore();
     const totalPrice = product.unitPrice * product.addedInCart;
     const redeem = Math.ceil(product.unitPrice * product.addedInCart * product.discount / 100);
     const offerPrice = totalPrice - redeem;
-    const url2 =
-        "https://chaldn.com/_mpimage/date-crown-lulu-dates-400-gm?src=https%3A%2F%2Feggyolk.chaldal.com%2Fapi%2FPicture%2FRaw%3FpictureId%3D129300&q=best&v=1&m=400&webp=1";
+
+
+
+
+    const removeItemFromCart = () => {
+        const modifiedProduct = {...product, addedInCart: 0};
+        updateProduct(modifiedProduct);
+    }
     return (
         <div className={styles.cartitemcontainer}>
             <div className={styles.addremovebutton}>
@@ -60,7 +68,7 @@ function CartItem({product, setTotalPriceOfAllItemsInCart}) {
                     </div>
                 </div>
             </div>
-            <div className={styles.cancel}>
+            <div className={styles.cancel} onClick={removeItemFromCart}>
                 <IconButton>
                     <CancelOutlined />
                 </IconButton>
