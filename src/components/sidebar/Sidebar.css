@@ -6,6 +6,7 @@
     padding: 10px;
     cursor: pointer;
     position: relative; /* Added */
+    /* overflow: auto; */
   }
   
   .category::before { /* Added */

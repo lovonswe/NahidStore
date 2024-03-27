@@ -23,7 +23,7 @@ const CustomSidebar = styled.div`
   top: 55px;
   left: ${(props) => (props.open ? "0" : "-250px")};
   width: 250px;
-  height: calc(100% - 55px - 10px;
+  height: calc(100% - 55px - 10px);
   background-color: #ffffff;
   transition: transform 0.3s ease;
   overflow-y: auto;
