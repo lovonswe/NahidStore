@@ -1,0 +1,68 @@
+.root {
+  height: 500px;
+  .layer-one-address {
+    border: 1px solid gray;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    .address-slection-title {
+      background-color: rgb(238, 234, 234);
+      border-bottom: 1px solid rgb(190, 189, 189);
+    }
+    .new-address-button {
+      margin-left: 20px;
+      margin-right: 20px;
+      margin-top: 20px;
+      margin-bottom: 40px;
+      border: 1px solid gray;
+      border-radius: 5px;
+      text-align: center;
+    }
+  }
+
+  .layer-two-delivery {
+    border: 1px solid gray;
+    border-radius: 5px;
+    .time-slection-title {
+        background-color: rgb(236, 236, 236);
+        border-bottom: 1px solid rgb(190, 189, 189);
+      }
+    .slot-msg {
+        text-align: center;
+        margin: 20px;
+    }
+
+  }
+
+  .layer-three-message {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 20px;
+    .next-page-payment-options {
+        flex-grow: 1;
+    }
+  }
+
+  .layer-four-proceed {
+    display: flex;
+    flex-direction: row-reverse;
+    .place-order-button {
+        display: flex;
+        height: 100px;
+        justify-content: center;
+        align-items: center;
+        font-size: large;
+        color: rgb(77, 69, 69);
+        &:hover {
+            .place-order {
+                box-shadow: 0px 1px 1px 1px rgb(151, 150, 150);
+                cursor: pointer;
+            }
+            .amount-to-pay {
+                box-shadow: 1px 1px 1px 1px rgb(151, 150, 150);
+                cursor: pointer;
+            }
+        }
+        
+    }
+  }
+}

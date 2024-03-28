@@ -95,7 +95,7 @@ $red-lighter: #ff8182;
 .footer {
   height: 15%;
   background-color: #f0e7e7;
- 
+
   .hotline {
     font-size: 20px;
     font-weight: 700;
@@ -109,32 +109,32 @@ $red-lighter: #ff8182;
     bottom: 50%;
     transform: translate(0%, -50%);
     .place-order-container {
+      display: flex;
+      margin: 10px;
+      font-size: 20px;
+      font-weight: 700;
+      color: white;
+      box-shadow: 0px 0px 8px 5px rgba(217, 32, 54, 0.3);
+      height: 45px;
+      .place-order {
         display: flex;
-        margin: 10px;
-        font-size: 20px;
-        font-weight: 700;
-        color: white;
-        box-shadow: 0px 0px 8px 5px rgba(217, 32, 54, 0.3);
-        height: 45px;
-        .place-order {
-          display: flex;
-          height: 100%;
-          background-color: #ff8182;
-          flex-grow: 1;
-          justify-content: center;
-          align-items: center;
-          &:hover {
-            background-color: #ec6767;
-            cursor: pointer;
-          }
-        }
-        .order-price {
-          display: flex;
-          background-color: #e04f54;
-          width: 110px;
-          justify-content: center;
-          align-items: center;
+        height: 100%;
+        background-color: #ff8182;
+        flex-grow: 1;
+        justify-content: center;
+        align-items: center;
+        &:hover {
+          background-color: #ec6767;
+          cursor: pointer;
         }
       }
+      .order-price {
+        display: flex;
+        background-color: #e04f54;
+        width: 110px;
+        justify-content: center;
+        align-items: center;
+      }
+    }
   }
 }
