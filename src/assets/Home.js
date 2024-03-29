@@ -4,8 +4,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import DashboardRow from '../components/DashboardRow';
 import CardCarousel from '../components/CardCarousel';
+import { Contents, theme } from '../pages/Offer';
+import { useSidebarStore } from '../store/FlagStore';
 //$navar-color: #ffd670;
 function Home() {
+    const { open } = useSidebarStore();
     const collegeImage = "https://chaldn.com/asset/Egg.ChaldalWeb.Fabric/Egg.ChaldalWeb1/1.0.0-Deploy-Release-450/Default/stores/chaldal/components/landingPage2/LandingPage/images/imageBanner.png?q=low&webp=1";
     const chaldalLogo = "https://chaldn.com/asset/Egg.ChaldalWeb.Fabric/Egg.ChaldalWeb1/1.0.0-Deploy-Release-450/Default/components/header/Header/images/logo-small.png?q=low&webp=1&alpha=1";
     const products = [
@@ -108,7 +111,7 @@ function Home() {
     ]
     // const products = [];
     return (
-        <>
+        <Contents theme={theme} className="contents" open={open}>
             <div className='_root'>
                 <div className='landing-banner'>
                     <div className='title-search'>
@@ -158,7 +161,7 @@ function Home() {
                     </div>
                 </div>
             </div>
-        </>
+        </Contents>
     )
 }
 

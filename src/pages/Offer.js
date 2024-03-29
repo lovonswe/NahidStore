@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import Navbar from "../components/Navbar";
-import Sidebars from "../components/sidebar/sidebar";
 import styled from "@emotion/styled";
 import "./OfferStyle.scss";
 import { useSidebarStore } from "../store/FlagStore";
@@ -12,13 +10,8 @@ import {
 } from "../store/PathStore";
 import { categories } from "../components/sidebar/SidebarData";
 import { useProductStore } from "../store/ProductStore";
-import ProductCategoryCard from "../components/card/ProductCategoryCard";
 import ProductCard from '../components/card/ProductCard';
-import TransitionsModal from "../components/modal/TransitionsModel";
-import ShoppingCart from "../components/shoppingCart/ShoppingCart";
-import CartMini from "../components/shoppingCart/CartMini";
-import PlaceOrder from "../components/order/PlaceOrder";
-import MapComponent from "../components/map/MyMap";
+
 function Offer() {
   const { open } = useSidebarStore();
   const { categoryName } = usecategoryStore();
@@ -94,7 +87,7 @@ function Offer() {
 
 export default Offer;
 
-const Contents = styled.div`
+export const Contents = styled.div`
   position: absolute;
   /* top: 0px; */
   right:0px;
@@ -112,7 +105,7 @@ const Contents = styled.div`
   }
 `;
 
-const theme = {
+export const theme = {
   breakpoints: {
     mobile: '@media (max-width: 768px)',
   }
