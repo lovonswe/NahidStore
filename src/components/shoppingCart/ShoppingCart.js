@@ -8,6 +8,7 @@ import CartItem from "./CartItem";
 import { useShoppingCartStore } from "../../store/FlagStore";
 import { usecartItemCountStore } from "../../store/ProductStore";
 import { useProductStore } from "../../store/ProductStore";
+import { useNavigate } from "react-router-dom";
 
 function ShoppingCart() {
   const [totalPriceOfAllItemsInCart, setTotalPriceOfAllItemsInCart] =
@@ -15,12 +16,17 @@ function ShoppingCart() {
   const { open, updateShoppingCartStatus } = useShoppingCartStore();
   const { itemsInCart } = usecartItemCountStore();
   const { products } = useProductStore();
+  const navigate = useNavigate();
   const cartImage =
     "https://chaldn.com/asset/Egg.ChaldalWeb.Fabric/Egg.ChaldalWeb1/1.0.0-Deploy-Release-450/Default/components/header/ShoppingCart/images/emptyShoppingBag.png?q=low&webp=1&alpha=1";
 
   const closeShoppingCart = () => {
     updateShoppingCartStatus(false);
   };
+
+  const placeOrder = () => {
+    navigate('place-order');
+  }
 
   useEffect(() => {
     setTotalPriceOfAllItemsInCart(
@@ -128,7 +134,11 @@ function ShoppingCart() {
         ) : (
           <div className="place-order-container-wrapper">
             <div className="place-order-container">
-              <div className="place-order">Place Order</div>
+
+              <div className="place-order"
+                onClick={placeOrder}
+              >Place Order</div>
+
               <div className="order-price">
                 <FontAwesomeIcon
                   className="delivery-taka-icon"

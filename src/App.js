@@ -12,26 +12,43 @@ import ShoppingCart from './components/shoppingCart/ShoppingCart';
 import Sidebar from './components/sidebar/sidebar';
 import Sidebars from './components/sidebar/sidebar';
 import Offer from './pages/Offer';
+import { BrowserRouter, Route, Routes, NavLink } from 'react-router-dom';
+import CartMini from './components/shoppingCart/CartMini';
+import OrderPlacement from './pages/OrderPlacement';
 
 function App() {
   const product = {
-    name : "Nahid",
-    description : "I am nahid Hasan Lovon",
+    name: "Nahid",
+    description: "I am nahid Hasan Lovon",
     image: "https://dcblog.b-cdn.net/wp-content/uploads/2021/02/Full-form-of-URL-1-1024x824.jpg"
   }
   return (
-    <div style={{backgroundColor:"none"}}>
-      {/* {/* <RecipeReviewCard />
-       <CardGpt product={product}/> */}
-     {/* <ProductCard />  */}
-       {/* <ReciepeCard /> */}
-       {/* <Navbar />
-       <Home />
-       <ShoppingCart />        */}
-                {/* <ProductDetails /> */}
-                {/* <Sidebars /> */}
-                <Offer />
-    </div>
+
+    <BrowserRouter>
+      <Navbar />
+      <Sidebar />
+      <CartMini />
+      <ShoppingCart />
+      <main>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='place-order' element={<OrderPlacement />} />
+          <Route path={'*'} element={<Offer />} />
+        </Routes>
+      </main>
+    </BrowserRouter>
+    // <div style={{backgroundColor:"none"}}>
+    //   {/* {/* <RecipeReviewCard />
+    //    <CardGpt product={product}/> */}
+    //  {/* <ProductCard />  */}
+    //    {/* <ReciepeCard /> */}
+    //    {/* <Navbar />
+    //    <Home />
+    //    <ShoppingCart />        */}
+    //             {/* <ProductDetails /> */}
+    //             {/* <Sidebars /> */}
+    //             <Offer />
+    // </div>
   );
 }
 

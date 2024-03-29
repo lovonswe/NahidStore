@@ -1,17 +1,24 @@
 import React, { useState } from "react";
 import styled from "@emotion/styled";
-import "../style/PlaceOrderStyle.scss";
 import { IconButton, Typography } from "@mui/material";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import AddIcon from "@mui/icons-material/Add";
 import WatchLaterIcon from "@mui/icons-material/WatchLater";
+import '../../style/PlaceOrderStyle.scss'
+import AddressModal from "../modal/AddressModal";
 
 function PlaceOrder() {
   const [addressAdded, setAddressAdded] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const deliveryCharge = 0;
   const amountToPay = 1234;
+
+  const openAddressModal = ()=> {
+    setIsModalOpen((curr) => !curr)
+  }
+
   return (
-    <div className="root">
+    <div className="root-place-order">
       <div className="layer-one-address">
         <div className="address-slection-title">
           <IconButton>
@@ -25,7 +32,7 @@ function PlaceOrder() {
           <div className="address-container"></div>
         ) : (
           <div className="new-address-button">
-            <IconButton>
+            <IconButton onClick={openAddressModal}>
               <AddIcon />
               <Typography>New Address</Typography>
             </IconButton>
@@ -42,6 +49,7 @@ function PlaceOrder() {
                 : `Prefered Delivery Date`}
             </Typography>
           </IconButton>
+          <AddressModal />
         </div>
         {addressAdded ? (
           <div></div>
@@ -63,6 +71,7 @@ function PlaceOrder() {
           <AmountToPay className="amount-to-pay">৳{amountToPay}</AmountToPay>
         </div>
       </div>
+      <AddressModal isModalOpen={isModalOpen} setIsModalOpen={setAddressAdded} />
     </div>
   );
 }

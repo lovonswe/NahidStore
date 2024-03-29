@@ -17,7 +17,7 @@ import ProductCard from '../components/card/ProductCard';
 import TransitionsModal from "../components/modal/TransitionsModel";
 import ShoppingCart from "../components/shoppingCart/ShoppingCart";
 import CartMini from "../components/shoppingCart/CartMini";
-import PlaceOrder from "./PlaceOrder";
+import PlaceOrder from "../components/order/PlaceOrder";
 import MapComponent from "../components/map/MyMap";
 function Offer() {
   const { open } = useSidebarStore();
@@ -31,14 +31,8 @@ function Offer() {
 
   return (
     <div>
-      <Navbar />
-      <Sidebars />
-      <ShoppingCart/>
-      <CartMini />
       <Contents theme={theme} className="contents" open={open}>
-        {/* <PlaceOrder /> */}
-        <MapComponent />
-        {/* <AutoCarousel />
+        <AutoCarousel />
         <div className="hierarchy">
           {categoryName && (
             <span
@@ -92,7 +86,7 @@ function Offer() {
                 }
               )
             }
-        </ProductShowCase> */}
+        </ProductShowCase>
       </Contents>
     </div>
   );

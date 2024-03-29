@@ -10,19 +10,22 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { useSidebarStore } from '../store/FlagStore';
+import { NavLink } from 'react-router-dom';
 
 function Navbar() {
     const chaldalLogo = "https://chaldn.com/asset/Egg.ChaldalWeb.Fabric/Egg.ChaldalWeb1/1.0.0-Deploy-Release-450/Default/components/header/Header/images/logo-small.png?q=low&webp=1&alpha=1";
-    const {updateSidebarStatus}=useSidebarStore();
-    const handleToggle = (e)=> {
+    const { updateSidebarStatus } = useSidebarStore();
+    const handleToggle = (e) => {
         updateSidebarStatus(!e);
     }
     return (
         <div className='navbar'>
-            <Hamburger onToggle={(e)=>{handleToggle(e)}}/>
-            <IconButton>
-                <img src={chaldalLogo} height={"40px"} />
-            </IconButton>
+            <Hamburger onToggle={(e) => { handleToggle(e) }} />
+            <NavLink to={"/"}>
+                <IconButton>
+                    <img src={chaldalLogo} height={"40px"} />
+                </IconButton>
+            </NavLink>
             <div className='input-container'>
                 <input
                     className='input-x'
@@ -35,7 +38,7 @@ function Navbar() {
                         fontSize: '16px',
                         //color: '#888',
                         outline: 'none', // Remove default focus outline
-                        
+
 
                     }}
                     placeholder="Search for products (e.g. eggs, milk, potato)"
@@ -53,7 +56,7 @@ function Navbar() {
                 />
             </div>
             <div className='location'>
-                <IconButton sx={{color: '#ff4e56'}}>
+                <IconButton sx={{ color: '#ff4e56' }}>
                     <LocationOnOutlinedIcon />
                     <Typography>
                         Dhaka
@@ -63,7 +66,7 @@ function Navbar() {
             </div>
             <div className='login-button'>
                 <IconButton >
-                    <Typography sx={{color: 'white', fontSize:'18px'}}>
+                    <Typography sx={{ color: 'white', fontSize: '18px' }}>
                         Login
                     </Typography>
                 </IconButton>
