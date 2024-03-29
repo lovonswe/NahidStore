@@ -11,6 +11,7 @@ import {
 import { categories } from "../components/sidebar/SidebarData";
 import { useProductStore } from "../store/ProductStore";
 import ProductCard from '../components/card/ProductCard';
+import ProductCategoryCard from "../components/card/ProductCategoryCard";
 
 function Offer() {
   const { open } = useSidebarStore();
@@ -19,7 +20,7 @@ function Offer() {
   const { subSubCategoryName, updateSubSubCategory } = useSubSubCategoryStore();
   const { products } = useProductStore();
   const handleCategoryClick = (category) => {
-    
+
   };
 
   return (
@@ -70,15 +71,37 @@ function Offer() {
           )}
         </div>
         <ProductShowCase className="product-showcase">
-            {
-              subSubCategoryName && products.filter((product) => {
-                return product.subsubCategory === subSubCategoryName ? true: false
-              }).map((product)=>
-                {
-                  return <ProductCard product={product}/>
-                }
-              )
+          {
+            categoryName && !subCategoryName && !subSubCategoryName && categories[categoryName].subCategories?.map((subCategory)=> {
+              const subCategoriesInStock = products?.filter((product) => {
+                //console.log("product subcategory : ", product.subCategory);
+                return product.subCategory === subCategory.name ? true : false;
+              })
+              return subCategoriesInStock.length ? <ProductCategoryCard product={subCategoriesInStock[0]} isSubCategory={true}/> : null;
+            })
+          }
+          {
+            categoryName && subCategoryName && !subSubCategoryName && categories[categoryName].subCategories?.map((subCategory) => {
+              return subCategory.subCategories?.map((subSubCategory) => {
+
+                const subSubCategoryInStock = products?.filter((product) => {
+                  console.log(subSubCategory , "  product:  ", product);
+                  return subSubCategory.name === product.subsubCategory? true : false;
+                });
+                //console.log("subSubCategoryInStock ", subSubCategoryInStock);
+                return subSubCategoryInStock.length ? <ProductCategoryCard product={subSubCategoryInStock[0]} isSubSubCategory={true}/> : null;
+
+              })
+            })
+          }
+          {
+            subSubCategoryName && products?.filter((product) => {
+              return product.subsubCategory === subSubCategoryName ? true : false
+            }).map((product) => {
+              return <ProductCard product={product} />
             }
+            )
+          }
         </ProductShowCase>
       </Contents>
     </div>

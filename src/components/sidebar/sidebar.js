@@ -10,8 +10,7 @@ import {
 } from "../../store/PathStore";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
-import egg from '../../assets/categoryIcons/egg1.png'
-import { IconButton } from "@mui/material";
+
 const theme = {
   breakpoints: {
     mobile: '@media (max-width: 768px)',
@@ -115,7 +114,7 @@ function Sidebars() {
     <CustomSidebar theme={theme} open={open} className={`sidebar ${isOpen ? "open" : ""}`}>
       {/* <button className="toggle-button" onClick={toggleSidebar}>{isOpen ? 'Close' : 'Open'}</button> */}
       {categories.map((category, index) => (
-      
+
         <div key={index}>
           <div
             className="category"
@@ -124,25 +123,26 @@ function Sidebars() {
               //backgroundColor: "#aaa"
             }}
           >
-              {
-                category.icon ? <img width={"18px"} src={category.icon} style={{marginRight: "3px"}}/> : null
-              }
-              
-              {category.name}
-            
-            
+            {
+              category.icon ? <img width={"18px"} src={category.icon} style={{ marginRight: "3px" }} /> : null
+            }
+
+            {
+              categories[categoryName] && category.name === categories[categoryName].name ? <span style={{ fontWeight: '900', color: "#e1a308" }}>{category.name}</span> : category.name}
+
+
             <span className="arrow">
               {setIcon(category.subCategories, selectedCategory, index)}
             </span>
           </div>
           {selectedCategory === index && category.subCategories && (
-            <ul 
-            className="subcategory-list"
-            style={{
-              //backgroundColor: 'red',
-              borderLeft: '1px solid gray',
-              marginLeft: '18px',
-            }}
+            <ul
+              className="subcategory-list"
+              style={{
+                //backgroundColor: 'red',
+                borderLeft: '1px solid gray',
+                marginLeft: '18px',
+              }}
             >
               {category.subCategories &&
                 category.subCategories.map((subcategory, subIndex) => (
@@ -155,11 +155,13 @@ function Sidebars() {
                     {
                       // console.log("subcategory : ", subcategory)
                     }
-                    {subcategory.name}
+                    {subCategoryName && subcategory.name === subCategoryName?<span style={{ fontWeight: '900', color: "#e1a308" }}>{subcategory.name}</span> : subcategory.name 
+                    
+                  }
                     {subcategory.subCategories && (
-                      <ul className="sub-subcategory-list" style={{ 
+                      <ul className="sub-subcategory-list" style={{
                         borderLeft: '1px solid gray'
-                        }}>
+                      }}>
                         {
                           // console.log("_subCategories: " ,subcategory)
                         }
@@ -172,7 +174,9 @@ function Sidebars() {
                                   handleSubSubCategoryClick(event, sub.name)
                                 }
                               >
-                                {sub.name}
+                                {subSubCategoryName && sub.name === subSubCategoryName ?
+                                <span style={{ fontWeight: '900', color: "#e1a308" }}>{sub.name}</span> : sub.name  
+                              }
                               </li>
                             )
                             // <li>Sub-subcategory 2</li>
