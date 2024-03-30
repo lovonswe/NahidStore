@@ -1,8 +1,11 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useDeliveryAddressStore } from '../../store/AddressStore';
 import bangladeshDistricts from '../../store/District';
 import '../../style/AddressFormStyle.scss';
 
-function AddressForm() {
+
+function AddressForm({ addressFromMap }) {
+  const { addDeliveryAddress } = useDeliveryAddressStore();
   const [formData, setFormData] = useState({
     city: '',
     area: '',
@@ -14,6 +17,13 @@ function AddressForm() {
   });
 
   const [errors, setErrors] = useState({});
+
+  useEffect(() => {
+    setFormData({
+      ...formData,
+      area: addressFromMap,
+    })
+  }, [addressFromMap]);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -37,7 +47,6 @@ function AddressForm() {
   const handleSubmit = (event) => {
     event.preventDefault();
     const validationErrors = {};
-    // Perform validation
     if (!formData.city) {
       validationErrors.city = 'City is required';
     }
@@ -60,6 +69,7 @@ function AddressForm() {
     if (Object.keys(validationErrors).length === 0) {
       // Form is valid, proceed with submitting
       console.log('Submitted Data:', formData);
+      addDeliveryAddress(formData);
       // You can proceed with saving data or any other action here
     } else {
       setErrors(validationErrors);

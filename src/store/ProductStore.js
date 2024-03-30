@@ -37,5 +37,13 @@ cartItemCountStore = persist(cartItemCountStore, { name: "items_in_cart" });
 export const usecartItemCountStore = create(cartItemCountStore);
 
 
+let searchedProductStore = (set) => ({
+    searchedProducts: [...productList],
+    updateSearchedProduct: (filteredProducts) => set((state) => ({
+        searchedProducts: [...filteredProducts],
+    })),
+});
 
+searchedProductStore = persist(searchedProductStore, { name: "searched_products" });
+export const usesearchedProductStore = create(searchedProductStore);
 

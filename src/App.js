@@ -15,6 +15,8 @@ import Offer from './pages/Offer';
 import { BrowserRouter, Route, Routes, NavLink } from 'react-router-dom';
 import CartMini from './components/shoppingCart/CartMini';
 import OrderPlacement from './pages/OrderPlacement';
+import { SavedSearchRounded } from '@mui/icons-material';
+import SearchResultPage from './pages/SearchResultPage';
 
 function App() {
   const product = {
@@ -33,6 +35,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='place-order' element={<OrderPlacement />} />
+          <Route path='search' element={<SearchResultPage />} />
           <Route path={'*'} element={<Offer />} />
         </Routes>
       </main>

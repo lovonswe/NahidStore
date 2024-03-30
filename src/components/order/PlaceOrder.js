@@ -4,16 +4,25 @@ import { IconButton, Typography } from "@mui/material";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import AddIcon from "@mui/icons-material/Add";
 import WatchLaterIcon from "@mui/icons-material/WatchLater";
-import '../../style/PlaceOrderStyle.scss'
 import AddressModal from "../modal/AddressModal";
+import { useDeliveryAddressStore } from "../../store/AddressStore";
+import DateTimePicker from "react-datetime-picker";
+import 'react-datetime-picker/dist/DateTimePicker.css';
+import 'react-calendar/dist/Calendar.css';
+import 'react-clock/dist/Clock.css';
+import '../../style/PlaceOrderStyle.scss'
+
+
 
 function PlaceOrder() {
   const [addressAdded, setAddressAdded] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [value, onChange] = useState(new Date());
+  const { deliveryAddress } = useDeliveryAddressStore();
   const deliveryCharge = 0;
   const amountToPay = 1234;
 
-  const openAddressModal = ()=> {
+  const openAddressModal = () => {
     setIsModalOpen((curr) => !curr)
   }
 
@@ -24,12 +33,24 @@ function PlaceOrder() {
           <IconButton>
             <LocationOnIcon />
             <Typography>
-              {addressAdded ? `Delivery Address` : `Select a delivery address`}
+              {deliveryAddress ? `Delivery Address` : `Select a delivery address`}
             </Typography>
           </IconButton>
         </div>
-        {addressAdded ? (
-          <div className="address-container"></div>
+        {deliveryAddress ? (
+          <div className="address-container">
+            <ul>
+              <li>City : {deliveryAddress.city}</li>
+              <li>
+                Area : {deliveryAddress.area}
+              </li>
+              <li>
+                Floor no : {deliveryAddress.floorNo}
+              </li>
+              <li> Flat no : {deliveryAddress.flatNo}</li>
+              <li> Moblie no : {deliveryAddress.mobileNumber}</li>
+            </ul>
+          </div>
         ) : (
           <div className="new-address-button">
             <IconButton onClick={openAddressModal}>
@@ -44,15 +65,17 @@ function PlaceOrder() {
           <IconButton>
             <WatchLaterIcon />
             <Typography>
-              {addressAdded
+              {deliveryAddress
                 ? `Prefered Delivery Date`
                 : `Prefered Delivery Date`}
             </Typography>
           </IconButton>
           <AddressModal />
         </div>
-        {addressAdded ? (
-          <div></div>
+        {deliveryAddress ? (
+          <div style={{textAlign: "center", padding: "5%"}}>
+            <DateTimePicker onChange={onChange} value={value}/>
+          </div>
         ) : (
           <div className="slot-msg">
             Slot selection will be available after selection and address
@@ -67,8 +90,8 @@ function PlaceOrder() {
       </div>
       <div className="layer-four-proceed">
         <div className="place-order-button">
-          <PlaceOrderPart className="place-order">Proceed</PlaceOrderPart>
-          <AmountToPay className="amount-to-pay">৳{amountToPay}</AmountToPay>
+          <PlaceOrderPart className="place-order" deliveryAddress={(deliveryAddress && value) ? true : false}>Proceed</PlaceOrderPart>
+          <AmountToPay className="amount-to-pay" deliveryAddress={(deliveryAddress && value) ? true : false}>৳{amountToPay}</AmountToPay>
         </div>
       </div>
       <AddressModal isModalOpen={isModalOpen} setIsModalOpen={setAddressAdded} />
@@ -78,14 +101,14 @@ function PlaceOrder() {
 export default PlaceOrder;
 
 const PlaceOrderPart = styled.div`
-            background-color: ${props => props.addressAdded ? 'rgb(201, 196, 196)' : '#ff686e'};
+            background-color: ${props => !props.deliveryAddress ? 'rgb(201, 196, 196)' : '#ff686e'};
             padding: 20px;
             border-top-left-radius: 5px;
             border-bottom-left-radius: 5px;
 `;
 
 const AmountToPay = styled.div`
-    background-color:${props => !props.addressAdded ? '#e04f54' : 'gray'};
+    background-color:${props => props.deliveryAddress ? '#e04f54' : 'gray'};
     padding: 20px;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;

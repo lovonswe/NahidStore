@@ -4,18 +4,17 @@ import { CardMedia, IconButton, Typography } from '@mui/material';
 import styles from './CartItemStyle.module.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { red } from '@mui/material/colors';
-import { useProductStore } from '../../store/ProductStore';
+import { useProductStore, usecartItemCountStore } from '../../store/ProductStore';
 function CartItem({product, setTotalPriceOfAllItemsInCart}) {
     const {updateProduct} = useProductStore();
+    const {itemsInCart, updateCount} = usecartItemCountStore();
     const totalPrice = product.unitPrice * product.addedInCart;
     const redeem = Math.ceil(product.unitPrice * product.addedInCart * product.discount / 100);
     const offerPrice = totalPrice - redeem;
 
-
-
-
     const removeItemFromCart = () => {
         const modifiedProduct = {...product, addedInCart: 0};
+        updateCount(itemsInCart-1);
         updateProduct(modifiedProduct);
     }
     return (
