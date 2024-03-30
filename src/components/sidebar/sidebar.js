@@ -10,6 +10,7 @@ import {
 } from "../../store/PathStore";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
+import { useNavigate } from "react-router-dom";
 
 const theme = {
   breakpoints: {
@@ -40,6 +41,7 @@ function Sidebars() {
   const { categoryName, updateCategory } = usecategoryStore();
   const { subCategoryName, updateSubCategory } = useSubCategoryStore();
   const { subSubCategoryName, updateSubSubCategory } = useSubSubCategoryStore();
+  const navigate = useNavigate();
 
   // const [selectedCategory, setSelectedCategory] = useState(null);
   // const [selectedSubcategory, setSelectedSubcategory] = useState(null);
@@ -58,22 +60,26 @@ function Sidebars() {
     return subSubCategoryName;
   });
 
-  const handleCategoryClick = (categoryIndex) => {
+  const handleCategoryClick = (categoryIndex, category) => {
+    navigate(category.path);
     setSelectedCategory(
-      selectedCategory === categoryIndex ? null : categoryIndex
+      //selectedCategory === categoryIndex ? null : categoryIndex
+      categoryIndex
     );
     setSelectedSubcategory(null);
     setSelectedSubSubCategory(null); // Reset subcategory selection
   };
 
-  const handleSubcategoryClick = (event, subcategory) => {
+  const handleSubcategoryClick = (event, subcategory, path) => {
+    navigate(path);
     setSelectedSubcategory(subcategory);
     setSelectedSubSubCategory(null);
     //console.log("sub-cat clicked");
   };
 
-  const handleSubSubCategoryClick = (event, subSubCategory) => {
+  const handleSubSubCategoryClick = (event, subSubCategory, path) => {
     event.stopPropagation();
+    navigate(path);
     setSelectedSubSubCategory(subSubCategory);
     //console.log("sub-sub-clicked.")
   };
@@ -118,7 +124,7 @@ function Sidebars() {
         <div key={index}>
           <div
             className="category"
-            onClick={() => handleCategoryClick(index, category.name)}
+            onClick={() => handleCategoryClick(index, category)}
             style={{
               //backgroundColor: "#aaa"
             }}
@@ -149,7 +155,7 @@ function Sidebars() {
                   <li
                     key={subIndex}
                     onClick={(event) =>
-                      handleSubcategoryClick(event, subcategory.name)
+                      handleSubcategoryClick(event, subcategory.name, subcategory.path)
                     }
                   >
                     {
@@ -171,7 +177,7 @@ function Sidebars() {
                               <li
                                 key={`${index}xxx`}
                                 onClick={(event) =>
-                                  handleSubSubCategoryClick(event, sub.name)
+                                  handleSubSubCategoryClick(event, sub.name, sub.path)
                                 }
                               >
                                 {subSubCategoryName && sub.name === subSubCategoryName ?
