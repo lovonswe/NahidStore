@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../../style/ProductCardStyle.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -29,15 +29,15 @@ const cardContainer = {
 function ProductCard({ product }) {
   const [cartCount, setCartCount] = useState(product.addedInCart);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const { updateProduct } = useProductStore();
-  const { itemsInCart, updateCount } =  usecartItemCountStore();
+  const { products, updateProduct } = useProductStore();
+  const { itemsInCart, updateCount } = usecartItemCountStore();
 
   const increaseCartCount = (e) => {
     setCartCount((curr) => {
       const newProduct = { ...product, addedInCart: curr + 1 };
       updateProduct(newProduct);
-      if(curr === 0){
-        updateCount(itemsInCart+1);
+      if (curr === 0) {
+        updateCount(itemsInCart + 1);
       }
       return curr + 1;
     });
@@ -48,11 +48,13 @@ function ProductCard({ product }) {
 
       const newProduct = { ...product, addedInCart: curr - 1 };
       updateProduct(newProduct);
-      if(curr === 1){
-        updateCount(itemsInCart-1);
+      if (curr === 1) {
+        updateCount(itemsInCart - 1);
       }
       return curr - 1;
     });
+
+    
     // setCartCount((curr) => curr - 1);
     // const clickedElement = e.target;
     // if (clickedElement.classList.contains('remove')) {
@@ -80,13 +82,20 @@ function ProductCard({ product }) {
 
     //product.addedInCart = cartCount;
     // const newProduct = await { ...product, addedInCart: cartCount };
-    // console.log("new Product : ", newProduct);
     // updateProduct(newProduct);
   };
 
   const handleModal = () => {
     setIsModalOpen((curr) => !curr)
   }
+
+  useEffect(() => {
+    products.map((currProduct) => {
+      if (currProduct.id === product.id) { 
+        setCartCount(currProduct.addedInCart); 
+      }
+    })
+  }, [products])
   return (
     <>
       <div className="card-container">
@@ -178,7 +187,7 @@ function ProductCard({ product }) {
           )}
         </div>
       </div>
-      <TransitionsModal isModalOpen={isModalOpen} setIsModalOpen ={setIsModalOpen}/>
+      <TransitionsModal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
     </>
   );
 }

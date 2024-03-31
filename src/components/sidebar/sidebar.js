@@ -74,14 +74,12 @@ function Sidebars() {
     navigate(path);
     setSelectedSubcategory(subcategory);
     setSelectedSubSubCategory(null);
-    //console.log("sub-cat clicked");
   };
 
   const handleSubSubCategoryClick = (event, subSubCategory, path) => {
     event.stopPropagation();
     navigate(path);
     setSelectedSubSubCategory(subSubCategory);
-    //console.log("sub-sub-clicked.")
   };
 
   const toggleSidebar = () => {
@@ -159,7 +157,6 @@ function Sidebars() {
                     }
                   >
                     {
-                      // console.log("subcategory : ", subcategory)
                     }
                     {subCategoryName && subcategory.name === subCategoryName?<span style={{ fontWeight: '900', color: "#e1a308" }}>{subcategory.name}</span> : subcategory.name 
                     
@@ -169,7 +166,7 @@ function Sidebars() {
                         borderLeft: '1px solid gray'
                       }}>
                         {
-                          // console.log("_subCategories: " ,subcategory)
+                        
                         }
                         {selectedSubcategory === subcategory.name &&
                           subcategory.subCategories.map(

@@ -24,7 +24,6 @@ const style = {
 export default function AddressModal({ isModalOpen, setIsModalOpen }) {
   const handleClose = () => setIsModalOpen(false);
   const closeAddressModal = () => {
-    console.log("closeAddressModal clicked.");
     return setIsModalOpen(false);
   }
 

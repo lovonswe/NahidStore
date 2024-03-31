@@ -23,7 +23,6 @@ function CartMini() {
     const {itemsInCart} = usecartItemCountStore();
     const handleShopingCart = ()=> {
         updateShoppingCartStatus(true);
-        console.log("cart mini clicked");
     }
     return (
         <CartMiniContainer className='cart-mini' onClick={handleShopingCart}>

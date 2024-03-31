@@ -14,6 +14,7 @@ function CartItem({product, setTotalPriceOfAllItemsInCart}) {
 
     const removeItemFromCart = () => {
         const modifiedProduct = {...product, addedInCart: 0};
+        
         updateCount(itemsInCart-1);
         updateProduct(modifiedProduct);
     }

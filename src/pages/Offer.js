@@ -23,6 +23,20 @@ function Offer() {
 
   };
 
+  const productsExistsForCategory = (product, categoryName) => {
+    console.log("product : ", product);
+    const isPopular = product.popular && categories[categoryName].name==='Popular';
+    const isRamadan = product.ramadan && categories[categoryName].name==='Ramadan';
+    const isCategory = product.category === categories;
+    const isExist = isPopular || isRamadan || isCategory;
+    console.log(isPopular, isRamadan, isCategory, isExist);
+    //[categoryName].name
+    // const isExist = ( || (product.category==='Popular' && product.popular) || (product.category=== 'Ramadan' && product.ramadan))
+    // console.log("isExist : ", isExist);
+    // console.log(product.category === categories[categoryName].name, product.category==='Popular' && product.popular, product.category=== 'Ramadan' && product.ramadan)
+    return isExist;
+  }
+
   return (
     <div>
       <Contents theme={theme} className="contents" open={open}>
@@ -71,21 +85,34 @@ function Offer() {
           )}
         </div>
         <ProductShowCase className="product-showcase">
+
+          {/* //category te clik korlei product show korbe karon er kuno sub category nai */}
           {
-            categoryName && !subCategoryName && !subSubCategoryName && categories[categoryName].subCategories?.map((subCategory)=> {
+            categoryName && !subCategoryName && !subSubCategoryName && !categories[categoryName].subCategories && products.filter((product) => {
+              console.log(product.category , " ", categories[categoryName].name )
+              return productsExistsForCategory(product, categoryName) ? true : false;
+            }).map((product) => {
+              // console.log("entered");
+             return <ProductCard product={product}/>
+            })
+          }
+
+          {
+             categoryName && !subCategoryName && !subSubCategoryName && categories[categoryName].subCategories?.map((subCategory)=> {
               const subCategoriesInStock = products?.filter((product) => {
                 //console.log("product subcategory : ", product.subCategory);
                 return product.subCategory === subCategory.name ? true : false;
               })
               return subCategoriesInStock.length ? <ProductCategoryCard product={subCategoriesInStock[0]} isSubCategory={true}/> : null;
-            })
+            }) 
           }
+
           {
             categoryName && subCategoryName && !subSubCategoryName && categories[categoryName].subCategories?.map((subCategory) => {
               return subCategory.subCategories?.map((subSubCategory) => {
 
                 const subSubCategoryInStock = products?.filter((product) => {
-                  console.log(subSubCategory , "  product:  ", product);
+                  // console.log(subSubCategory , "  product:  ", product);
                   return subSubCategory.name === product.subsubCategory? true : false;
                 });
                 //console.log("subSubCategoryInStock ", subSubCategoryInStock);

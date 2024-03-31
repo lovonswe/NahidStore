@@ -49,7 +49,6 @@ function LocationMarker({ setLocation }) {
   });
 
   useEffect(() => {
-    console.log("position : ", position.lat);
     fetch(
       `https://api.opencagedata.com/geocode/v1/json?q=${position.lat}+${position.lng}&key=4f729a1ff2824d3dbf07fb7be51456e7`
     )

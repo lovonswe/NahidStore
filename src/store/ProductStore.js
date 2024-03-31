@@ -47,3 +47,13 @@ let searchedProductStore = (set) => ({
 searchedProductStore = persist(searchedProductStore, { name: "searched_products" });
 export const usesearchedProductStore = create(searchedProductStore);
 
+
+let totalPriceOfProductsInCart = (set) => ({
+    totalPrice: 0,
+    updateTotalPrice: (updatedPrice) => set((state) => ({
+        totalPrice: updatedPrice,
+    })),
+});
+
+totalPriceOfProductsInCart = persist(totalPriceOfProductsInCart, { name: "total_price_of_cart_items" });
+export const usetotalPriceOfProductsInCart = create(totalPriceOfProductsInCart);

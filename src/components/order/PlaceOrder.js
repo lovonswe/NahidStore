@@ -11,6 +11,8 @@ import 'react-datetime-picker/dist/DateTimePicker.css';
 import 'react-calendar/dist/Calendar.css';
 import 'react-clock/dist/Clock.css';
 import '../../style/PlaceOrderStyle.scss'
+import { usetotalPriceOfProductsInCart } from "../../store/ProductStore";
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -19,11 +21,19 @@ function PlaceOrder() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [value, onChange] = useState(new Date());
   const { deliveryAddress } = useDeliveryAddressStore();
+  const {totalPrice} = usetotalPriceOfProductsInCart();
   const deliveryCharge = 0;
-  const amountToPay = 1234;
+  const amountToPay = totalPrice;
+  const navigate = useNavigate();
 
   const openAddressModal = () => {
     setIsModalOpen((curr) => !curr)
+  }
+
+  const handleProceed = () => {
+    alert(`Your order of taka ${totalPrice} has been placed successfully`)
+    navigate('ramadan');
+    
   }
 
   return (
@@ -90,8 +100,8 @@ function PlaceOrder() {
       </div>
       <div className="layer-four-proceed">
         <div className="place-order-button">
-          <PlaceOrderPart className="place-order" deliveryAddress={(deliveryAddress && value) ? true : false}>Proceed</PlaceOrderPart>
-          <AmountToPay className="amount-to-pay" deliveryAddress={(deliveryAddress && value) ? true : false}>৳{amountToPay}</AmountToPay>
+          <PlaceOrderPart className="place-order" deliveryAddress={(deliveryAddress && value) ? true : false} onClick={(deliveryAddress && value)? handleProceed : null}>Proceed</PlaceOrderPart>
+          <AmountToPay className="amount-to-pay" deliveryAddress={(deliveryAddress && value) ? true : false}>৳{totalPrice}</AmountToPay>
         </div>
       </div>
       <AddressModal isModalOpen={isModalOpen} setIsModalOpen={setAddressAdded} />

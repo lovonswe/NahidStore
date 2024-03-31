@@ -6,13 +6,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
 import CartItem from "./CartItem";
 import { useShoppingCartStore } from "../../store/FlagStore";
-import { usecartItemCountStore } from "../../store/ProductStore";
+import { usecartItemCountStore, usetotalPriceOfProductsInCart } from "../../store/ProductStore";
 import { useProductStore } from "../../store/ProductStore";
 import { useNavigate } from "react-router-dom";
 
 function ShoppingCart() {
   const [totalPriceOfAllItemsInCart, setTotalPriceOfAllItemsInCart] =
     useState(0);
+  const { updateTotalPrice } = usetotalPriceOfProductsInCart();
   const { open, updateShoppingCartStatus } = useShoppingCartStore();
   const { itemsInCart } = usecartItemCountStore();
   const { products } = useProductStore();
@@ -33,7 +34,6 @@ function ShoppingCart() {
       products
         .filter((product) => (product.addedInCart > 0 ? true : false))
         .reduce((curr, cum) => {
-          console.log("cum : ", cum);
           const totalPrice = cum.addedInCart * cum.unitPrice;
           const redeem = Math.ceil((totalPrice * cum.discount) / 100);
           const offerPrice = totalPrice - redeem;
@@ -41,6 +41,9 @@ function ShoppingCart() {
         }, 0)
     );
   });
+  useEffect(()=> {
+    updateTotalPrice(totalPriceOfAllItemsInCart)
+  }, [totalPriceOfAllItemsInCart]);
   return (
     <div
       className="shopping-cart"
