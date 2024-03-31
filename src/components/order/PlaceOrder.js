@@ -37,6 +37,7 @@ function PlaceOrder() {
   }
 
   return (
+    <>
     <div className="root-place-order">
       <div className="layer-one-address">
         <div className="address-slection-title">
@@ -104,8 +105,10 @@ function PlaceOrder() {
           <AmountToPay className="amount-to-pay" deliveryAddress={(deliveryAddress && value) ? true : false}>৳{totalPrice}</AmountToPay>
         </div>
       </div>
-      <AddressModal isModalOpen={isModalOpen} setIsModalOpen={setAddressAdded} />
+      
     </div>
+    <AddressModal isModalOpen={isModalOpen} setIsModalOpen={setAddressAdded} />
+    </>
   );
 }
 export default PlaceOrder;

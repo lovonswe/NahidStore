@@ -99,10 +99,10 @@ function MapComponent() {
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
           <LocationMarker setLocation={setLocationSelectedFromMap} />
-          <Marker position={[51.505, -0.09]} icon={customIcon}>
+          {/* <Marker position={[51.505, -0.09]} icon={customIcon}>
             <Popup>pop up visible only after click</Popup>
             <Tooltip>MOhakhali tooltip</Tooltip>
-          </Marker>
+          </Marker> */}
         </MapContainer>
       </div>
       {
