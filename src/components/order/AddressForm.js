@@ -70,6 +70,7 @@ function AddressForm({ addressFromMap }) {
       // Form is valid, proceed with submitting
       console.log('Submitted Data:', formData);
       addDeliveryAddress(formData);
+      alert("Product Delivery Addresse Added Successfully");
       // You can proceed with saving data or any other action here
     } else {
       setErrors(validationErrors);
