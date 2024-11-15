@@ -17,13 +17,13 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 # My Project
 
 ## Landing page:
-<img src="assets/images/landingpage.png" alt="Geolocation" width="500" />
-
+<img src="assets/images/landingpage.png" alt="Geolocation" width="700" />
+Hasan Lovon
 ## Geolocation:
-<img src="assets/images/4.png" alt="Geolocation" width="500" />
+<img src="assets/images/4.png" alt="Geolocation" width="700" />
 
 ## Shopping Cart:
-<img src="assets/images/5.png" alt="Shopping Cart" width="500" />
+<img src="assets/images/5.png" alt="Shopping Cart" width="700" />
 
 ## Product Cards:
 <div style="display: flex; justify-content: space-around;">
@@ -33,5 +33,5 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 </div>
 
 ## Reverse Geolocation
-<img src="assets/images/reversegeolocation.png" alt="Shopping Cart" width="500" />
+<img src="assets/images/reversegeolocation.png" alt="Shopping Cart" width="700" />
 
