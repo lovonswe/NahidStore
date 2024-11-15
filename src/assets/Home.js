@@ -9,103 +9,141 @@ import { useSidebarStore } from '../store/FlagStore';
 //$navar-color: #ffd670;
 function Home() {
     const { open } = useSidebarStore();
-    const collegeImage = "https://chaldn.com/asset/Egg.ChaldalWeb.Fabric/Egg.ChaldalWeb1/1.0.0-Deploy-Release-450/Default/stores/chaldal/components/landingPage2/LandingPage/images/imageBanner.png?q=low&webp=1";
+    const collegeImage = "https://chaldn.com/asset/Egg.ChaldalWeb.Fabric/Egg.ChaldalWeb1/1.0.0-Deploy-Release-622/Default/stores/chaldal/components/landingPage2/LandingPage/images/imageBanner.png";
     const chaldalLogo = "https://chaldn.com/asset/Egg.ChaldalWeb.Fabric/Egg.ChaldalWeb1/1.0.0-Deploy-Release-450/Default/components/header/Header/images/logo-small.png?q=low&webp=1&alpha=1";
     const products = [
         {
             id: '1',
             name: 'Mango 1',
-            description: 'Fruit'
+            description: 'Fruit', subCategory: 'Fruit',
+            isSubCategory: true,
+            subCategoryImage: "https://chaldn.com/_mpimage/fresh-vegetables?src=https%3A%2F%2Feggyolk.chaldal.com%2Fapi%2FPicture%2FRaw%3FpictureId%3D23773&q=low&v=1&m=400&webp=1" 
         },
         {
             id: '2',
             name: 'Mango 2',
-            description: 'Fruit'
+            description: 'Fruit', subCategory: 'Fruit',
+            isSubCategory: true,
+            subCategoryImage: "https://chaldn.com/_mpimage/fresh-vegetables?src=https%3A%2F%2Feggyolk.chaldal.com%2Fapi%2FPicture%2FRaw%3FpictureId%3D23773&q=low&v=1&m=400&webp=1" 
         },
         {
             id: '3',
             name: 'Mango 3',
-            description: 'Fruit'
+            description: 'Fruit', subCategory: 'Fruit',
+            isSubCategory: true,
+            subCategoryImage: "https://chaldn.com/_mpimage/fresh-vegetables?src=https%3A%2F%2Feggyolk.chaldal.com%2Fapi%2FPicture%2FRaw%3FpictureId%3D23773&q=low&v=1&m=400&webp=1" 
         },
         {
             id: '4',
             name: 'Mango 4',
-            description: 'Fruit'
+            description: 'Fruit', subCategory: 'Fruit',
+            isSubCategory: true,
+            subCategoryImage: "https://chaldn.com/_mpimage/fresh-vegetables?src=https%3A%2F%2Feggyolk.chaldal.com%2Fapi%2FPicture%2FRaw%3FpictureId%3D23773&q=low&v=1&m=400&webp=1" 
         },
         {
             id: '5',
             name: 'Mango 5',
-            description: 'Fruit'
+            description: 'Fruit', subCategory: 'Fruit',
+            isSubCategory: true,
+            subCategoryImage: "https://chaldn.com/_mpimage/fresh-vegetables?src=https%3A%2F%2Feggyolk.chaldal.com%2Fapi%2FPicture%2FRaw%3FpictureId%3D23773&q=low&v=1&m=400&webp=1" 
         },
         {
             id: '6',
             name: 'Mango 6',
-            description: 'Fruit'
+            description: 'Fruit', subCategory: 'Fruit',
+            isSubCategory: true,
+            subCategoryImage: "https://chaldn.com/_mpimage/fresh-vegetables?src=https%3A%2F%2Feggyolk.chaldal.com%2Fapi%2FPicture%2FRaw%3FpictureId%3D23773&q=low&v=1&m=400&webp=1" 
         },
         {
             id: '7',
             name: 'Mango 7',
-            description: 'Fruit'
+            description: 'Fruit', subCategory: 'Fruit',
+            isSubCategory: true,
+            subCategoryImage: "https://chaldn.com/_mpimage/fresh-vegetables?src=https%3A%2F%2Feggyolk.chaldal.com%2Fapi%2FPicture%2FRaw%3FpictureId%3D23773&q=low&v=1&m=400&webp=1" 
         },
         {
             id: '8',
             name: 'Mango 7',
-            description: 'Fruit'
+            description: 'Fruit', subCategory: 'Fruit',
+            isSubCategory: true,
+            subCategoryImage: "https://chaldn.com/_mpimage/fresh-vegetables?src=https%3A%2F%2Feggyolk.chaldal.com%2Fapi%2FPicture%2FRaw%3FpictureId%3D23773&q=low&v=1&m=400&webp=1" 
         },
         {
             id: '9',
             name: 'Mango 8',
-            description: 'Fruit'
+            description: 'Fruit', subCategory: 'Fruit',
+            isSubCategory: true,
+            subCategoryImage: "https://chaldn.com/_mpimage/fresh-vegetables?src=https%3A%2F%2Feggyolk.chaldal.com%2Fapi%2FPicture%2FRaw%3FpictureId%3D23773&q=low&v=1&m=400&webp=1" 
         },
         {
             id: '10',
             name: 'Mango 9',
-            description: 'Fruit'
+            description: 'Fruit', subCategory: 'Fruit',
+            isSubCategory: true,
+            subCategoryImage: "https://chaldn.com/_mpimage/fresh-vegetables?src=https%3A%2F%2Feggyolk.chaldal.com%2Fapi%2FPicture%2FRaw%3FpictureId%3D23773&q=low&v=1&m=400&webp=1" 
         },
         {
             id: '11',
             name: 'Mango 10',
-            description: 'Fruit'
+            description: 'Fruit', subCategory: 'Fruit',
+            isSubCategory: true,
+            subCategoryImage: "https://chaldn.com/_mpimage/fresh-vegetables?src=https%3A%2F%2Feggyolk.chaldal.com%2Fapi%2FPicture%2FRaw%3FpictureId%3D23773&q=low&v=1&m=400&webp=1" 
         },
         {
             id: '12',
             name: 'Mango 11',
-            description: 'Fruit'
+            description: 'Fruit', subCategory: 'Fruit',
+            isSubCategory: true,
+            subCategoryImage: "https://chaldn.com/_mpimage/fresh-vegetables?src=https%3A%2F%2Feggyolk.chaldal.com%2Fapi%2FPicture%2FRaw%3FpictureId%3D23773&q=low&v=1&m=400&webp=1" 
         },
         {
             id: '13',
             name: 'Mango 12',
-            description: 'Fruit'
+            description: 'Fruit', subCategory: 'Fruit',
+            isSubCategory: true,
+            subCategoryImage: "https://chaldn.com/_mpimage/fresh-vegetables?src=https%3A%2F%2Feggyolk.chaldal.com%2Fapi%2FPicture%2FRaw%3FpictureId%3D23773&q=low&v=1&m=400&webp=1" 
         },
         {
             id: '14',
             name: 'Mango 13',
-            description: 'Fruit'
+            description: 'Fruit', subCategory: 'Fruit',
+            isSubCategory: true,
+            subCategoryImage: "https://chaldn.com/_mpimage/fresh-vegetables?src=https%3A%2F%2Feggyolk.chaldal.com%2Fapi%2FPicture%2FRaw%3FpictureId%3D23773&q=low&v=1&m=400&webp=1" 
         },
         {
             id: '15',
             name: 'Mango 14',
-            description: 'Fruit'
+            description: 'Fruit', subCategory: 'Fruit',
+            isSubCategory: true,
+            subCategoryImage: "https://chaldn.com/_mpimage/fresh-vegetables?src=https%3A%2F%2Feggyolk.chaldal.com%2Fapi%2FPicture%2FRaw%3FpictureId%3D23773&q=low&v=1&m=400&webp=1" 
         },
         {
             id: '16',
             name: 'Mango 15',
-            description: 'Fruit'
+            description: 'Fruit', subCategory: 'Fruit',
+            isSubCategory: true,
+            subCategoryImage: "https://chaldn.com/_mpimage/fresh-vegetables?src=https%3A%2F%2Feggyolk.chaldal.com%2Fapi%2FPicture%2FRaw%3FpictureId%3D23773&q=low&v=1&m=400&webp=1" 
         },
         {
             id: '17',
             name: 'Mango 16',
-            description: 'Fruit'
+            description: 'Fruit', subCategory: 'Fruit',
+            isSubCategory: true,
+            subCategoryImage: "https://chaldn.com/_mpimage/fresh-vegetables?src=https%3A%2F%2Feggyolk.chaldal.com%2Fapi%2FPicture%2FRaw%3FpictureId%3D23773&q=low&v=1&m=400&webp=1" 
         },
         {
             id: '18',
             name: 'Mango 17',
-            description: 'Fruit'
+            description: 'Fruit', subCategory: 'Fruit',
+            isSubCategory: true,
+            subCategoryImage: "https://chaldn.com/_mpimage/fresh-vegetables?src=https%3A%2F%2Feggyolk.chaldal.com%2Fapi%2FPicture%2FRaw%3FpictureId%3D23773&q=low&v=1&m=400&webp=1" 
         },
         {
             id: '19',
             name: 'Mango 18',
-            description: 'Fruit'
+            description: 'Fruit', subCategory: 'Fruit',
+            isSubCategory: true,
+            subCategoryImage: "https://chaldn.com/_mpimage/fresh-vegetables?src=https%3A%2F%2Feggyolk.chaldal.com%2Fapi%2FPicture%2FRaw%3FpictureId%3D23773&q=low&v=1&m=400&webp=1" 
         },
 
     ]
@@ -148,7 +186,7 @@ function Home() {
                         </div>
                     </div>
                     <div className='collegeImageContainer'>
-                        <img src={collegeImage} height={"437px"}/>
+                        <img src={collegeImage} height={"437px"} alt='collegeImage'/>
                     </div>
                 </div>
                 <DashboardRow />

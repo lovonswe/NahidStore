@@ -42,7 +42,7 @@ const CardCarousel = ({ products }) => {
         //     {/* Add other product details */}
         //   </div>
         // </div>
-        <ProductCategoryCard />
+        <ProductCategoryCard product={product} isSubCategory={true}/>
       ))}
     </Slider>
   );

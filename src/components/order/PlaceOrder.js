@@ -101,7 +101,7 @@ function PlaceOrder() {
       </div>
       <div className="layer-four-proceed">
         <div className="place-order-button">
-          <PlaceOrderPart className="place-order" deliveryAddress={(deliveryAddress && value) ? true : false} onClick={(deliveryAddress && value)? handleProceed : null}>Proceed</PlaceOrderPart>
+          <PlaceOrderPart className="place-order" deliveryAddress={(deliveryAddress && value) ? true : false} onClick={(deliveryAddress && value)? handleProceed : null}>৳{totalPrice}</PlaceOrderPart>
           <AmountToPay className="amount-to-pay" deliveryAddress={(deliveryAddress && value) ? true : false}>৳{totalPrice}</AmountToPay>
         </div>
       </div>
