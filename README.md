@@ -13,7 +13,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 # My Project
 
-## Geolocation:
+## Landing page:
 <img src="assets/images/landingpage.png" alt="Geolocation" width="200" />
 
 ## Product Cards:
